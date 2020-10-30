@@ -40,7 +40,7 @@ The signature covers both the metadata and the body.
 
 The signature covers both the metadata and the body.
 
-## FAQ: How about verify small changes?
+## FAQ: How about very small changes? Couldn't they escape detection?
 
 It's like being a "little bit pregnant". If you changed the smallest thing, then the entire
 signatures fails -- and verification fails. It doesn't matter how small.
