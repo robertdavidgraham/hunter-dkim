@@ -67,13 +67,31 @@ old key even if they don't provide it directly.
 Yes, that's a problem. Other DKIM verification tools and libraries can grab
 the key from a file, so you could try that.
 
-what I did instead was set up BIND9 as my DNS resolver, then configured
+What I did instead was set up BIND9 as my DNS resolver, then configured
 a "Response Policy Zone" (RPZ) with this one record changed. This means
 that it'll provide live resolution for any other names, but overwrite
 the correct response (of "not found") with the old key that I retrieve
 from Internet websites.
 
 Overriding certain records in a resolver this way is pretty common practice.
+If you manage your own DNS server already, you can easily update it to 
+provide the correct public-key.
+
+## FAQ: What about this page that says DKIM can be fooled?
+
+Many people cite the following web page to claim DKIM doesn't work:
+
+<https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html>
+
+None of it applies to this email. It does not apply because:
+- there are no duplicate metadata fields in the actual email
+- there isn't a length (`l=`) field in the actual email
+
+It's pretty obvious that it doesn't apply if you read it and pay attention to it.
+
+
+
+
 
 
 
