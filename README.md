@@ -46,8 +46,8 @@ It's like being a "little bit pregnant". If you changed the smallest thing, then
 signatures fails -- and verification fails. It doesn't matter how small.
 
 Well, except spaces. DKIM uses a "relaxed" verification scheme which allows, in certain
-circumstances, spaces to be added here. In theory this could be an issue, but in practice,
-it's not an issue here. It uses "quoted printable" encoding, meaning, there's no place
+circumstances, spaces to be added. In theory this could be an issue, but
+here. This message used the "quoted printable" encoding, meaning, there's no place
 to insert a space.
 
 ## FAQ: But GMail's DNS servers no longer provide the public-key
@@ -86,6 +86,7 @@ Many people cite the following web page to claim DKIM doesn't work:
 None of it applies to this email. It does not apply because:
 - there are no duplicate metadata fields in the actual email
 - there isn't a length (`l=`) field in the actual email
+- the `content-transfer-encoding` field is included within the signature
 
 It's pretty obvious that it doesn't apply if you read it and pay attention to it.
 
