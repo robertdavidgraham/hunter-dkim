@@ -17,7 +17,9 @@ said **"Give me six words by the most honest of men and I'll find something to h
 Give me an email dump from the most honest of persons, and I'll pull one out of context
 to hang them in the court of social media.
 
-## FAQ: Can't signatures can be faked, replayed, forged, or cheated?
+## FAQ
+
+### "Can't signatures can be faked, replayed, forged, or cheated?"
 
 Not cryptographic signatures, at least, not in any practical/reasonable manner.
 
@@ -32,25 +34,29 @@ The trick is you have to keep the private-key private. Bitcoin do sometimes get 
 when people break into a computer and steal the wallet's private-key. If somebody broke
 into GMail, they'd be able to forge signatures as well.
 
-## FAQ: Okay, you've verified the metadata, but couldn't the contents of the body of the email be changed?
+### "Okay, you've verified the metadata, but couldn't the contents of the body of the email be changed?"
 
-The signature covers both the metadata and the body.
+The signature covers both the metadata and the body. The slightest change to either
+invalidates the signature.
 
-## FAQ: Okay, you've verified the email contents, couldn't the metadata be spoofed, such as the real email being sent last month?
+### "Okay, you've verified the email contents, couldn't the metadata be spoofed, such as the real email being sent last month?"
 
-The signature covers both the metadata and the body.
+The signature covers both the metadata and the body. Yes, some email metadata isn't covered by
+the signature, esoteric things like `X-Received:` headers. But the signature does cover the
+ones we care about: `Date:`, `From:`, `To:`, and `Subject:`.
 
-## FAQ: How about very small changes? Couldn't they escape detection?
+### "How about very small changes? Couldn't they escape detection?"
 
 It's like being a "little bit pregnant". If you changed the smallest thing, then the entire
 signatures fails -- and verification fails. It doesn't matter how small.
 
 Well, except spaces. DKIM uses a "relaxed" verification scheme which allows, in certain
-circumstances, spaces to be added. In theory this could be an issue, but
-here. This message used the "quoted printable" encoding, meaning, there's no place
-to insert a space.
+circumstances, spaces to be added.
 
-## FAQ: But GMail's DNS servers no longer provide the public-key
+But even that isn't an issue here. This message used the "quoted printable" encoding,
+which means there's almost no place to add a space.
+
+### "But GMail's DNS servers no longer provide the public-key"
 
 This is indeed a problem -- for most email domains that aren't GMail.
 
@@ -62,7 +68,12 @@ Thus, in theory the system only works when the domain in question is currently
 providing the public-key to validate signatures, in practice we can know GMail's
 old key even if they don't provide it directly.
 
-## FAQ: My DKIM verifier can only fetch the key from a DNS server
+The proper key is one of the files in this project, but of course, I could
+be lying. You can verify this by googling the key, searching archives
+like Archive.org, or by specialty logging sites that have retained
+copies of the old key.
+
+### "My DKIM verifier can only fetch the key from a DNS server"
 
 Yes, that's a problem. Other DKIM verification tools and libraries can grab
 the key from a file, so you could try that ([like this one](https://gist.github.com/stevecheckoway/51e63d4c269bd2be4a50a3b39645a77c)).
@@ -77,7 +88,7 @@ Overriding certain records in a resolver this way is pretty common practice.
 If you manage your own DNS server already, you can easily update it to 
 provide the correct public-key.
 
-## FAQ: What about this page that says DKIM can be fooled?
+### "What about this page that says DKIM can be fooled?"
 
 Many people cite the following web page to claim DKIM doesn't work:
 
@@ -89,6 +100,20 @@ None of it applies to this email. It does not apply because:
 - the `content-transfer-encoding` field is included within the signature
 
 It's pretty obvious that it doesn't apply if you read it and pay attention to it.
+
+### So the Email is real, but the account could be fake. It's only somebody **claiming** to be Pozharskyi."
+
+Yup, that's possible. It seems his official address was `vadym.pozharskyi@burisma.com`.
+
+But note that it's somebody who would've been pretending to be Pozharskyi back in 2014.
+Because DKIM validates the `Date:` field, we know it wasn't somebody pretending right
+now in order to create fake news against the Bidens.
+
+However, this email address can be seen in other sources tied to the real Pozharskyi.
+For example, there's [this document](https://www.hsgac.senate.gov/imo/media/doc/2020-08-31-Painter%20Interview%20with%20Exhibits.pdf)
+from a Senate investigation showing him using that GMail address last year.
+
+
 
 
 
