@@ -65,7 +65,7 @@ old key even if they don't provide it directly.
 ## FAQ: My DKIM verifier can only fetch the key from a DNS server
 
 Yes, that's a problem. Other DKIM verification tools and libraries can grab
-the key from a file, so you could try that.
+the key from a file, so you could try that ([like this one](https://gist.github.com/stevecheckoway/51e63d4c269bd2be4a50a3b39645a77c)).
 
 What I did instead was set up BIND9 as my DNS resolver, then configured
 a "Response Policy Zone" (RPZ) with this one record changed. This means
