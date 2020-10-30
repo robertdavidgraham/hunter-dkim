@@ -28,6 +28,14 @@ so you can insert this one record (for `20120113._domainkey.gmail.com TXT`)
 so that any tool will work, such as the DKIM Verifier add-on for Thunderbird.
 Google "Response Policy Zones for BIND9". That's what I first did.
 
+### "The entire email dump or just this one?"
+
+I've only validated this one email. It's the only one sent to me.
+
+Many can't be validated. They are sent from domains that don't use DKIM
+to sign outgoing emails. Others used DKIM when sent, but we can no longer
+find the public-keys that would authenticate them (it's been years).
+
 ### "Can't signatures can be faked, replayed, forged, or cheated?"
 
 Not cryptographic signatures, at least, not in any practical/reasonable manner.
