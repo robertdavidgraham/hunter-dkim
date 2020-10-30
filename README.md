@@ -103,20 +103,25 @@ It's pretty obvious that it doesn't apply if you read it and pay attention to it
 
 ### So the Email is real, but the account could be fake. It's only somebody **claiming** to be Pozharskyi."
 
-Yup, that's possible. It seems his official address was `vadym.pozharskyi@burisma.com`.
+Yup, that's possible. It seems his official address was `vadym.pozharskyi@burisma.com`,
+not the `v.pozharskyi.ukraine@gmail.com` address seen in this email.
 
-But note that it's somebody who would've been pretending to be Pozharskyi back in 2014.
-Because DKIM validates the `Date:` field, we know it wasn't somebody pretending right
-now in order to create fake news against the Bidens.
+DKIM only proves that was the real `From:` address. It doesn't prove who actually
+owned the account. Indeed, even if it was his account, a staffer could've sent
+it on his behalf.
 
-However, this email address can be seen in other sources tied to the real Pozharskyi.
+So we can't authentic it was this person.
+
+What we can verify, however, is that if somebody created a GMail account to 
+impersonate Pozharskyi back in 2014, it was some trickery they were up to then,
+but not now. It would have to be some really long-ranged plan whereby they
+send fake emails to his  account on the hopes that somebody in the future
+his emails could leak or get hacked. Frankly, if that was their plan, they should've
+sent more incriminating emails (this one isn't that incriminating).
+
+But, there are other sources that sorta validate that he used this address.
 For example, there's [this document](https://www.hsgac.senate.gov/imo/media/doc/2020-08-31-Painter%20Interview%20with%20Exhibits.pdf)
 from a Senate investigation showing him using that GMail address last year.
-
-
-
-
-
 
 
 
