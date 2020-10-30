@@ -167,7 +167,7 @@ provide the correct public-key.
 
 ### "What about this page that says DKIM can be fooled?"
 
-I lot of confident Twitter "experts" proclaim tha DKIM can be faked.
+A lot of confident Twitter "experts" proclaim that DKIM can be faked.
 They are just repeating rumors without understanding how. They also
 aren't reproducing this verification or demonstrating how this email
 specifically could've been faked.
