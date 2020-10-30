@@ -34,6 +34,11 @@ The trick is you have to keep the private-key private. Bitcoin do sometimes get 
 when people break into a computer and steal the wallet's private-key. If somebody broke
 into GMail, they'd be able to forge signatures as well.
 
+So many people ask this question. They know basic 'checksums', and know that if you change
+the contents you can just change the checksum to match. The step they don't undestand
+is that public-keys are involved, that without knowing the matching private-key, there's
+no way to adjust the signature to match the contents.
+
 ### "Okay, you've verified the metadata, but couldn't the contents of the body of the email be changed?"
 
 The signature covers both the metadata and the body. The slightest change to either
