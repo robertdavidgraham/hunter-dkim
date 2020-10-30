@@ -1,0 +1,54 @@
+Return-Path: <gmaxwell@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.2 (2011-06-06) on petertodd.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,FREEMAIL_FROM,RCVD_IN_DNSWL_LOW,SPF_PASS,
+	URIBL_BLOCKED autolearn=ham version=3.3.2
+X-Original-To: pete@petertodd.org
+Delivered-To: pete@petertodd.org
+Received: from mail-ie0-f170.google.com (mail-ie0-f170.google.com [209.85.223.170])
+	by petertodd.org (Postfix) with ESMTPS id 24A9E4002F
+	for <pete@petertodd.org>; Mon, 10 Nov 2014 04:20:53 -0500 (EST)
+Authentication-Results: petertodd.org; dkim=pass
+	reason="2048-bit key; insecure key"
+	header.d=gmail.com header.i=@gmail.com header.b=LeWKVXY0;
+	dkim-adsp=pass; dkim-atps=neutral
+Received: by mail-ie0-f170.google.com with SMTP id tp5so8920171ieb.15
+        for <pete@petertodd.org>; Mon, 10 Nov 2014 01:20:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        bh=CPlUQuCWYapDt94Wk/7HWjAPNPGC5mjeaQa/Y+uB89U=;
+        b=LeWKVXY0I2OkI6YJJ3gaPIJAgvhWqxO9/o+eW3vQ8TwaTnfv5a03hlnk2Fe6NLlQyw
+         eLDOVwMrDF+iFZtlnZWSAqXim6+FmHNOmfLCfdY6hTqI1cvqfdKdjzTUeU4BWomU1Kdy
+         iWQ8xkbBcgWo/c9xgU6mnkXWlThLqsYRIswqTK/UyA1YUIsFVeFfChy+d2Dg14I0AQbi
+         s4CXWfbzUPQvlGQaf8z3yDFc8ynL8CX6Z0i7HdgXz4s+AZ5y7yIjevmgnkKRshbENfHS
+         IRG5rBxkcm0hE5Wd6OuFSeIUBZt3tUb1v4iNl8WXne6Z+5uL0hPos8rIl1WGOrFg7S+L
+         NDxQ==
+MIME-Version: 1.0
+X-Received: by 10.107.11.67 with SMTP id v64mr849940ioi.76.1415611207314; Mon,
+ 10 Nov 2014 01:20:07 -0800 (PST)
+Received: by 10.107.168.211 with HTTP; Mon, 10 Nov 2014 01:20:07 -0800 (PST)
+In-Reply-To: <20141110091100.GA2501@savin.petertodd.org>
+References: <20141110091100.GA2501@savin.petertodd.org>
+Date: Mon, 10 Nov 2014 09:20:07 +0000
+Message-ID: <CAAS2fgSXktMgCBohOA787_CaZ72tx+9cL2ZDjf8p9MjdzzUTgA@mail.gmail.com>
+Subject: Re: BIP # request for CHECKLOCKTIMEVERIFY
+From: Gregory Maxwell <gmaxwell@gmail.com>
+To: Peter Todd <pete@petertodd.org>
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 246
+Lines: 11
+
+BIP65 appears free to me.
+
+If I've not screwed up, take it.
+
+On Mon, Nov 10, 2014 at 9:11 AM, Peter Todd <pete@petertodd.org> wrote:
+> thanks
+>
+> --
+> 'peter'[:-1]@petertodd.org
+> 000000000000000016871bf68cc941c38ae836e6ed8853e975de4183d1ac9f6c
+
