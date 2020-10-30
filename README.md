@@ -32,6 +32,24 @@ The trick is you have to keep the private-key private. Bitcoin do sometimes get 
 when people break into a computer and steal the wallet's private-key. If somebody broke
 into GMail, they'd be able to forge signatures as well.
 
+## FAQ: Okay, you've verified the metadata, but couldn't the contents of the body of the email be changed?
+
+The signature covers both the metadata and the body.
+
+## FAQ: Okay, you've verified the email contents, couldn't the metadata be spoofed, such as the real email being sent last month?
+
+The signature covers both the metadata and the body.
+
+## FAQ: How about verify small changes?
+
+It's like being a "little bit pregnant". If you changed the smallest thing, then the entire
+signatures fails -- and verification fails. It doesn't matter how small.
+
+Well, except spaces. DKIM uses a "relaxed" verification scheme which allows, in certain
+circumstances, spaces to be added here. In theory this could be an issue, but in practice,
+it's not an issue here. It uses "quoted printable" encoding, meaning, there's no place
+to insert a space.
+
 ## FAQ: But GMail's DNS servers no longer provide the public-key
 
 This is indeed a problem -- for most email domains that aren't GMail.
