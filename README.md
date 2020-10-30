@@ -28,6 +28,16 @@ These are described in more detail below.
 
 ## FAQ
 
+### "What precisely was validated?"
+
+What the signature in this email validates:
+- it was sent from this specific account, `v.pozharskyi.ukraine@gmail.com`,
+  known to have been used by Vadym Pozharskyi, a Burisma board member
+- the intended recipient was to the account `hbiden@rosemontseneca.com`,
+  known to have been used by Hunter Biden
+- that it was sent between 2012 and 2016
+- the `Subject:` and body have not been altered in any way
+
 ### "How can I replicate this?"
 
 There's a python script that'll do the validation for you within this repo.
@@ -227,3 +237,19 @@ which even all the nation states working together cannot crack.
 
 Note: that link is also yet another source verifying this key is the correct one.
 
+### "Did you get this email from the laptop? or was it sent to you?"
+
+The email was sent to me by a journalist. This leads to two points.
+
+The first is that validation of the email is solid *regardless of source*. We know it was
+an email sent by GMail from around that time by that named account. Doesn't matter where it
+came, we can know these facts.
+
+The second is that even if I had a copy of the laptop drive, it's passed
+through so many hands on the way to me that it's untrustworthy. I mean,
+if you doubt the "laptop" story to begin, I don't think me having a copy
+could validate that their story is true.
+
+I personally have many doubts about where this email came from, and the
+overall "narrative" they are trying to push. Regardless, I can validate the
+basic facts about this email.
