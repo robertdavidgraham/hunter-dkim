@@ -88,8 +88,9 @@ an authenticated user of that account.
 ### "Is it timestamped?"
 
 The `Date:` field in the headers/metadata is included in the signature.
-DKIM verifies the contents of that field, but not that it's the correct date.
-Since the signing key changed a year later, we know the data was before 2016.
+DKIM verifies the contents of that field (that somebody didn't alter after signing),
+but not that it's the correct date.
+Since the signing key changed a year later, we know the date was before 2016.
 
 There are other timestamps in the email headers/metadata, but they aren't
 validated by DKIM, and hence, could be forged.
