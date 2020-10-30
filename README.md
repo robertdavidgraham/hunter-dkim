@@ -19,6 +19,15 @@ to hang them in the court of social media.
 
 ## FAQ
 
+### "How can I replicate this?"
+
+There's a python script that'll do the validation for you within this repo.
+
+If you run your own resolver, they all have ability to override certain records,
+so you can insert this one record (for `20120113._domainkey.gmail.com TXT`) 
+so that any tool will work, such as the DKIM Verifier add-on for Thunderbird.
+Google "Response Policy Zones for BIND9". That's what I first did.
+
 ### "Can't signatures can be faked, replayed, forged, or cheated?"
 
 Not cryptographic signatures, at least, not in any practical/reasonable manner.
@@ -106,29 +115,33 @@ None of it applies to this email. It does not apply because:
 
 It's pretty obvious that it doesn't apply if you read it and pay attention to it.
 
-### So the Email is real, but the account could be fake. It's only somebody **claiming** to be Pozharskyi."
+### So the Email is real, but the account could be fake, by someone **claiming** to be Pozharskyi."
 
-Yup, that's possible. It seems his official address was `vadym.pozharskyi@burisma.com`,
-not the `v.pozharskyi.ukraine@gmail.com` address seen in this email.
+Yup, that's possible. We've only proven *a* Vadym Pozharskyi sent the email,
+not that *the* Vadym Pozharskyi sent it. It's somebody who, in 2014, claimed
+to have been a "V. Pozharskyi from Ukraine".
 
-DKIM only proves that was the real `From:` address. It doesn't prove who actually
-owned the account. Indeed, even if it was his account, a staffer could've sent
-it on his behalf.
+DKIM proves only that
+the account indeed was `v.pozharskyi.ukraine@gmail.com`.
+You can create an account `rob.graham.usa@gmail.com`, 
+and GMail will happily verify those outgoing messages without verifying
+the person sending them is actually named Robert Graham. In any event,
+even if it could verify a person's real name, it couldn't verify it's the same
+Robert Graham as myself.
 
-So we can't authentic it was this person.
+Thus, we know the emails (based on DKIM) come from somebody claiming to
+be a Vadym Pozharskyi, but there's no way to prove it's our Vadym.
 
-What we can verify, however, is that if somebody created a GMail account to 
-impersonate Pozharskyi back in 2014, it was some trickery they were up to then,
-but not now. It would have to be some really long-ranged plan whereby they
-send fake emails to his  account on the hopes that somebody in the future
-his emails could leak or get hacked. Frankly, if that was their plan, they should've
-sent more incriminating emails (this one isn't that incriminating).
-
-But, there are other sources that sorta validate that he used this address.
+But, there are other sources that validate that he used this address.
 For example, there's [this document](https://www.hsgac.senate.gov/imo/media/doc/2020-08-31-Painter%20Interview%20with%20Exhibits.pdf)
 from a Senate investigation showing him using that GMail address last year.
 
+DKIM does verify the date (`Date:`). If it's somebody claiming to have been Pozharskyi
+claiming to have met Hunter's dad, then it's a conspiracy from 2014 not a 
+conspiracy from 2020. It would mean somebody who knew intimate details about
+Hunter Biden sending him fake messages on the off chance that in a future election
+they would be able to hack into Hunter's email account to expose them.
 
-
-
+Like the theory of them hacking into GMail to obtain the private-key, if the 
+conspiracy was this sophisticated, they could do better emails. This one is lame.
 
