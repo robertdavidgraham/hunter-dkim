@@ -157,7 +157,12 @@ provide the correct public-key.
 
 ### "What about this page that says DKIM can be fooled?"
 
-Many people cite the following web page to claim DKIM doesn't work:
+I lot of confident Twitter "experts" proclaim tha DKIM can be faked.
+They are just repeating rumors without understanding how. They also
+aren't reproducing this verification or demonstrating how this email
+specifically could've been faked.
+
+The most common source they cite is the following web page to claim DKIM doesn't work:
 
 <https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html>
 
