@@ -71,6 +71,29 @@ The signature covers both the metadata and the body. Yes, some email metadata is
 the signature, esoteric things like `X-Received:` headers. But the signature does cover the
 ones we care about: `Date:`, `From:`, `To:`, and `Subject:`.
 
+### "OKay, the email and metaday, but what about the envelope?"
+
+Several people have cited this Wikipedia article that says that 
+[DKIM signatures do not encompass the message envelope](https://en.m.wikipedia.org/wiki/DomainKeys_Identified_Mail).
+This is correct, but it doesn't mean what you might think it means.
+
+It's like if somebody sent you a printed copy of this email. The address
+on the outside is unrelated to the contents -- it doesn't mean the contents
+aren't authenticate.
+
+In any case, Google forces the two to be the same. If the email says `From:` a 
+GMail account, and it was authenticated by GMail's DKIM key, then it came from
+an authenticated user of that account.
+
+### "Is it timestamped?"
+
+The `Date:` field in the headers/metadata is included in the signature.
+DKIM verifies the contents of that field, but not that it's the correct date.
+Since the signing key changed a year later, we know the data was before 2016.
+
+There are other timestamps in the email headers/metadata, but they aren't
+validated by DKIM, and hence, could be forged.
+
 ### "How about very small changes? Couldn't they escape detection?"
 
 It's like being a "little bit pregnant". If you changed the smallest thing, then the entire
@@ -125,9 +148,15 @@ None of it applies to this email. It does not apply because:
 - there isn't a length (`l=`) field in the actual email
 - the `content-transfer-encoding` field is included within the signature
 
-It's pretty obvious that it doesn't apply if you read it and pay attention to it.
+Likewise, the following link about DKIM problems is invalid for the same
+reason:
 
-### So the Email is real, but the account could be fake, by someone **claiming** to be Pozharskyi."
+<https://www.zdnet.com/article/dkim-useless-or-just-disappointing/>
+
+The message doesn't have the issues described.
+
+
+### "So the Email is real, but the account could be fake, by someone **claiming** to be Pozharskyi."
 
 Yup, that's possible. We've only proven *a* Vadym Pozharskyi sent the email,
 not that *the* Vadym Pozharskyi sent it. It's somebody who, in 2014, claimed
@@ -144,7 +173,7 @@ Robert Graham as myself.
 Thus, we know the emails (based on DKIM) come from somebody claiming to
 be a Vadym Pozharskyi, but there's no way to prove it's our Vadym.
 
-But, there are other sources that validate that he used this address.
+But, there are [other sources](https://blog.intelx.io/2020/10/14/an-osint-investigation-into-the-alleged-hunter-biden-email/) that validate that he used this address.
 For example, there's [this document](https://www.hsgac.senate.gov/imo/media/doc/2020-08-31-Painter%20Interview%20with%20Exhibits.pdf)
 from a Senate investigation showing him using that GMail address last year.
 
@@ -156,4 +185,22 @@ they would be able to hack into Hunter's email account to expose them.
 
 Like the theory of them hacking into GMail to obtain the private-key, if the 
 conspiracy was this sophisticated, they could do better emails. This one is lame.
+
+### "How did you see that secret metadata, in a debugger?"
+
+In some cases, metadata in files like photographs require special tools. But emails
+are just text, even the metadata. You can open in any text editor. Just click
+on this [link](https://raw.githubusercontent.com/robertdavidgraham/hunter-dkim/main/Meeting%20for%20coffee.eml)
+and see for yourself.
+
+### "Short DKIM keys can be cracked."
+
+When GMail first started DKIM signing, they used 1024 bit RSA keys. These are short
+enough that a nation state (like Russia) can crack them.
+
+But since 2012, they've been 
+[using 2048 bit RSA keys](https://superuser.com/questions/507752/computing-number-of-bits-in-public-key), 
+which even all the nation states working together cannot crack.
+
+Note: that link is also yet another source verifying this key is the correct one.
 
