@@ -24,6 +24,8 @@ the article. There are three challenges, however. These are:
 - (Q) GMail verifies it's from that account, but not who controled that account (B) we see this account used by Pozharskyi elsewhere
 - (Q) The `Date:` field doesn't actually timestamp the message. (A) The signing key was valid from Jan-2012 to Oct-2015, giving a timestamp window when it must've been sent
 
+These are described in more detail below.
+
 ## FAQ
 
 ### "How can I replicate this?"
