@@ -28,7 +28,7 @@ so you can insert this one record (for `20120113._domainkey.gmail.com TXT`)
 so that any tool will work, such as the DKIM Verifier add-on for Thunderbird.
 Google "Response Policy Zones for BIND9". That's what I first did.
 
-### "The entire email dump or just this one?"
+### "The entire email dump verified or just this one?"
 
 I've only validated this one email. It's the only one sent to me.
 
