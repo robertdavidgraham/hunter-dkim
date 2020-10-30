@@ -89,8 +89,16 @@ an authenticated user of that account.
 
 The `Date:` field in the headers/metadata is included in the signature.
 DKIM verifies the contents of that field (that somebody didn't alter after signing),
-but not that it's the correct date.
-Since the signing key changed a year later, we know the date was before 2016.
+but not that it's the correct date. Any fraudulent information can be put here.
+
+But the fraud would have to occur at the time the email was sent. And that time
+would have be before October 2016, when GMail changed their DKIM signing keys.
+
+Thus, it's effectively timestamped "some time after January 2012 and before October 2016".
+
+In other words, we know it came from Vadym Pozharskyi, but he couldn't sent it
+around a year later than the authenticated email headers claimed he sent it, like April 2016
+instead of April 2015.
 
 There are other timestamps in the email headers/metadata, but they aren't
 validated by DKIM, and hence, could be forged.
