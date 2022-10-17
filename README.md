@@ -59,7 +59,7 @@ Many can't be validated. They are sent from domains that don't use DKIM
 to sign outgoing emails. Others used DKIM when sent, but we can no longer
 find the public-keys that would authenticate them (it's been years).
 
-### "Can't signatures can be faked, replayed, forged, or cheated?"
+### "Can't signatures be faked, replayed, forged, or cheated?"
 
 Not cryptographic signatures, at least, not in any practical/reasonable manner.
 
@@ -90,7 +90,7 @@ The signature covers both the metadata and the body. Yes, some email metadata is
 the signature, esoteric things like `X-Received:` headers. But the signature does cover the
 ones we care about: `Date:`, `From:`, `To:`, and `Subject:`.
 
-### "OKay, the email and metaday, but what about the envelope?"
+### "OKay, the email and metadata, but what about the envelope?"
 
 Several people have cited this Wikipedia article that says that 
 [DKIM signatures do not encompass the message envelope](https://en.m.wikipedia.org/wiki/DomainKeys_Identified_Mail).
@@ -98,7 +98,7 @@ This is correct, but it doesn't mean what you might think it means.
 
 It's like if somebody sent you a printed copy of this email. The address
 on the outside is unrelated to the contents -- it doesn't mean the contents
-aren't authenticate.
+aren't authenticated.
 
 In any case, Google forces the two to be the same. If the email says `From:` a 
 GMail account, and it was authenticated by GMail's DKIM key, then it came from
@@ -111,11 +111,11 @@ DKIM verifies the contents of that field (that somebody didn't alter after signi
 but not that it's the correct date. Any fraudulent information can be put here.
 
 But the fraud would have to occur at the time the email was sent. And that time
-would have be before October 2016, when GMail changed their DKIM signing keys.
+would have to be before October 2016, when GMail changed their DKIM signing keys.
 
 Thus, it's effectively timestamped "some time after January 2012 and before October 2016".
 
-In other words, we know it came from Vadym Pozharskyi, but he couldn't sent it
+In other words, we know it came from Vadym Pozharskyi, but he couldn't have sent it
 around a year later than the authenticated email headers claimed he sent it, like April 2016
 instead of April 2015.
 
@@ -142,7 +142,7 @@ of the old key, including archives of old sites, log files from servers, and so
 on.
 
 Thus, in theory the system only works when the domain in question is currently
-providing the public-key to validate signatures, in practice we can know GMail's
+providing the public-key to validate signatures, but in practice we can know GMail's
 old key even if they don't provide it directly.
 
 The proper key is one of the files in this project, but of course, I could
@@ -167,7 +167,7 @@ provide the correct public-key.
 
 ### "What about this page that says DKIM can be fooled?"
 
-I lot of confident Twitter "experts" proclaim tha DKIM can be faked.
+A lot of confident Twitter "experts" proclaim that DKIM can be faked.
 They are just repeating rumors without understanding how. They also
 aren't reproducing this verification or demonstrating how this email
 specifically could've been faked.
@@ -222,7 +222,7 @@ conspiracy was this sophisticated, they could do better emails. This one is lame
 ### "How did you see that secret metadata, in a debugger?"
 
 In some cases, metadata in files like photographs require special tools. But emails
-are just text, even the metadata. You can open in any text editor. Just click
+are just text, even the metadata. You can open them in any text editor. Just click
 on this [link](https://raw.githubusercontent.com/robertdavidgraham/hunter-dkim/main/Meeting%20for%20coffee.eml)
 and see for yourself.
 
